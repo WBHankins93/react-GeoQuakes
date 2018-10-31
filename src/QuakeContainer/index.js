@@ -1,13 +1,49 @@
-import React, { Component } from 'react';
+// import React, { Component } from 'react';
+//
+//
+// class QuakeContainer extends Component {
+//
+//   render() {
+//       const quakeList = this.props.earthquakeData.map((earthquakeData, i) => {
+//       return (
+//         <li key={i}>
+//         Title: {earthquakeData.properties.title} <br/>
+//         </li>
+//       )
+//     });
+//
+//     return(
+//       <div>
+//         <h4>QuakeContainer</h4>
+//         <ul>
+//           <li>{quakeList}</li>
+//         </ul>
+//       </div>
+//     )
+//   }
+// }
+//
+// export default QuakeContainer;
 
+import React, {Component} from 'react';
 
-class quakeContainer extends Component {
+class QuakeContainer extends Component {
 
   render() {
+    const quakeList = this.props.earthquakes.map((earthquakes, i) => {
+      return (
+        <div key={i} id="info">
+        <h2><p>{earthquakes.properties.title} </p></h2><br/>
+
+        </div>
+      )
+    });
     return(
-      <h1>IM ALIVEEEEEEEEEEEEE</h1>
-    );
+      <div>
+      {quakeList}
+      </div>
+    )
   }
 }
 
-export default quakeContainer;
+export default QuakeContainer;

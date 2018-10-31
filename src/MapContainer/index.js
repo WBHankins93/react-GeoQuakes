@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-class mapContainer extends Component {
+class MapContainer extends Component {
 
 
   render(){
     return(
-
+      <h1>MapContainer</h1>
     )
   }
 }
 
-export default mapContainer;
+export default MapContainer;
