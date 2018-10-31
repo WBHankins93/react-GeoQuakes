@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { GoogleApiWrapper, InfoWindow, Map, Marker } from 'google-maps-react';
+
+ import { GoogleApiWrapper, InfoWindow, Map, Marker } from 'google-maps-react';
 
   class GoogleMapsContainer extends React.Component {
   constructor(props) {
@@ -32,10 +33,9 @@ import { GoogleApiWrapper, InfoWindow, Map, Marker } from 'google-maps-react';
 
   render() {
     const style = {
-      width: '600px',
-      height: '600px',
-      'marginLeft': '0',
-      'marginRight': '0'
+      width: '45%',
+      height: '90%',
+      position: 'relative'
     }
     return (
       <Map
@@ -64,5 +64,5 @@ import { GoogleApiWrapper, InfoWindow, Map, Marker } from 'google-maps-react';
   }
 }
 export default GoogleApiWrapper({
-    api: (process.env.AIzaSyAK6X7LO2EiudURnWklG1cqH0yGsnlxgbA)
+    apiKey: "AIzaSyAK6X7LO2EiudURnWklG1cqH0yGsnlxgbA"
 })(GoogleMapsContainer)
