@@ -61,7 +61,7 @@
 // export default App;
 
 import React, { Component } from 'react';
-// import Map from './Map';
+import MapContainer from './MapContainer';
 import QuakeContainer from './QuakeContainer';
 
 class App extends Component {
@@ -96,11 +96,12 @@ class App extends Component {
     return (
       <div className="app">
         <div className="mapContainer">
-          
+
         </div>
         <div className="quakeContainer">
           <h1>Earthquakes from the past week: </h1>
           <QuakeContainer earthquakes={this.state.earthquakes}/>
+          <MapContainer />
         </div>
       </div>
     );
