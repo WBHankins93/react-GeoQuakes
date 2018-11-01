@@ -1,4 +1,4 @@
-
+import './App.css';
 import React, { Component } from 'react';
 import MapContainer from './MapContainer';
 import Map from './MapContainer'
@@ -22,6 +22,8 @@ class App extends Component {
     }
   }
 
+
+
   componentDidMount(){
     this.getEarthquakes().then((earthquakes) => {
       console.log(earthquakes, ' this is earthquakes');
@@ -33,15 +35,26 @@ class App extends Component {
 }
 
   render() {
+
+    const earthquakesList = this.state.earthquakes.map((earthquakes, i) => {
+      return (
+        <li key={i}>
+        <p>{earthquakes.geometry.coordinates[0]};</p>
+        <p>{earthquakes.geometry.coordinates[1]};</p>
+        </li>
+      )
+    });
+
     return (
       <div className="app">
+
         <div className="mapContainer">
-        <Map earthquakes={this.state.earthquakes} />
+        <Map earthquakes={this.state.earthquakes} earthquakesList={this.earthquakesList}/>
         </div>
         <div className="quakeContainer">
           <h1>Earthquakes from the past week: </h1>
           <QuakeContainer earthquakes={this.state.earthquakes}/>
-          
+
         </div>
       </div>
     );

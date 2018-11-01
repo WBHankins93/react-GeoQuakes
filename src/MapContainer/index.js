@@ -7,13 +7,18 @@ import React, { Component } from 'react';
     super(props);
     this.state = {
       showingInfoWindow: false,
-      activeMarker: {},
+      activeMarker: [],
       selectedPlace: {}
     }
     // binding this to event-handler functions
     this.onMarkerClick = this.onMarkerClick.bind(this);
     this.onMapClick = this.onMapClick.bind(this);
   }
+
+  initMarkers = () => {
+
+  }
+
   onMarkerClick = (props, marker, e) => {
     this.setState({
       selectedPlace: props,
@@ -34,7 +39,7 @@ import React, { Component } from 'react';
   render() {
     const style = {
       width: '45%',
-      height: '90%',
+      height: '80%',
       position: 'relative'
     }
     return (
@@ -45,13 +50,13 @@ import React, { Component } from 'react';
         google = { this.props.google }
         onClick = { this.onMapClick }
         zoom = { 14 }
-        initialCenter = {{ lat: 30.2682, lng: -97.74295 }}
+        initialCenter = {{ lat: 30.2762, lng: -97.7533 }}
       >
         <Marker
           onClick = { this.onMarkerClick }
-          title = { 'Changing Colors Garage' }
-          position = {{ lat: 30.2682, lng: -97.74295 }}
-          name = { 'Changing Colors Garage' }
+          title = { 'Graffiti Park, Austin, TX, USA' }
+          position = {{ lat: 30.2762, lng: -97.7533 }}
+          name = { 'Graffiti Park, Austin, TX, USA' }
         />
         <InfoWindow
           marker = { this.state.activeMarker }
